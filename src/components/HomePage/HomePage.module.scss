@@ -1,4 +1,4 @@
-$min-width: 768px;
+$min-width: 900px;
 
 section.homePage {
   width: 100%;
@@ -34,7 +34,7 @@ section.homePage {
   }
 }
 
-@media screen and (min-width:$min-width) {
+@media screen and (min-width: $min-width) {
   section.homePage {
     .title {
       width: 400px;

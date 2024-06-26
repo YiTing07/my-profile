@@ -3,7 +3,7 @@ import myImage from '../../assets/images/my-image.jpg';
 
 export default function About() {
   return (
-    <section className={styles.aboutPage}>
+    <section id='About'className={styles.aboutPage}>
       <div className={styles.container}>
         <div className={styles.about}>
           <h2>ABOUT</h2>
@@ -29,3 +29,4 @@ export default function About() {
     </section>
   )
 }
+

@@ -6,7 +6,9 @@ function Navbar() {
   return (
     <ul className={styles.navbar}>
       {navItems.map((item, index) =>
-        <li key={index} className={styles.navItem}><a href={item} rel='navItem'>{item}</a></li>
+        <li key={index} className={styles.navItem}>
+          <a href={item} rel='navItem'>{item}</a>
+        </li>
       )}
     </ul>
   )
@@ -21,7 +23,7 @@ export default function Header() {
 
       <input type="checkbox" className={styles.navbarToggle} id='navbarToggle' />
 
-      <Navbar />
+      <Navbar/>
 
       <label className={styles.navbarToggleLabel} htmlFor="navbarToggle">
         <span className={styles.hamburger}></span>

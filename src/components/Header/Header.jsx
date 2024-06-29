@@ -1,5 +1,7 @@
 import styles from './Header.module.scss';
 
+import { Link } from 'react-scroll';
+
 function Navbar() {
   const navItems = ['About', 'Experience', 'Skill', 'Portfolio']
 
@@ -7,7 +9,9 @@ function Navbar() {
     <ul className={styles.navbar}>
       {navItems.map((item, index) =>
         <li key={index} className={styles.navItem}>
-          <a href={item} rel='navItem'>{item}</a>
+          <Link className='navItemLink' activeClass='active' smooth spy to={item}>
+            {item}
+          </Link>
         </li>
       )}
     </ul>
@@ -18,7 +22,11 @@ export default function Header() {
   return (
     <header>
       <div className={styles.title}>
-        <h2>My Profile</h2>
+        <h2>
+          <Link activeClass='active' smooth spy to='home'>
+            My Profile
+          </Link>
+        </h2>
       </div>
 
       <input type="checkbox" className={styles.navbarToggle} id='navbarToggle' />

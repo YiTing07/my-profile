@@ -2,7 +2,7 @@ import styles from './HomePage.module.scss'
 
 export default function HomePage() {
   return (
-    <section className={styles.homePage}>
+    <section id='home' className={styles.homePage}>
       <div className={styles.container}>
         <div className={styles.title}>
           <h1>Hello! I'm</h1>

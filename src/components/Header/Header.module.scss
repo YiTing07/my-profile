@@ -11,8 +11,12 @@ header {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 999;
 
-  .title {
+  .title  a{
     color: var(--cream);
+  }
+
+  .title:hover {
+    cursor: pointer;
   }
 
   .navbar {
@@ -45,6 +49,10 @@ header {
     .navItem > a::before {
       content: "";
       transform: translateX(-50%) scaleX(0);
+    }
+
+    .navItem:hover {
+      cursor: pointer;
     }
 
     .navItem:hover > a::before {

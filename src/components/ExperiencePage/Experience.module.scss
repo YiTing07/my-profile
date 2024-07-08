@@ -1,0 +1,138 @@
+section.experiencePage {
+  width: 100%;
+  height: 100%;
+
+  .container {
+    padding: 2em 0;
+
+    .experience {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        margin-bottom: 1.25em;
+        color: var(--orange);
+      }
+
+      .content {
+        .timeline {
+          margin: 0 auto;
+          margin-bottom: 20px;
+          padding: 0 1.25em;
+         
+          .buttonGroup {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            max-width: 400px;
+
+            button {              
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 0.6em 0.3em;
+              width: 64px;
+              height: 36px;
+              background-color: #fff;
+              border: 2px solid var(--brown);
+              border-radius: 5px; 
+            }
+
+            button:hover {
+              cursor: pointer;
+              color: var(--cream);
+              background-color: var(--brown);
+            }
+            
+            button.active {
+              color: var(--cream);
+              background-color: var(--brown);
+              box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            }
+          }
+        }
+
+        .job {
+          display: flex;
+          flex-direction: column;
+          width: 75vw;
+          margin: 0 auto;
+          padding-left: 1em;
+
+          .title {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            padding-top: 1em;
+
+            p {
+              margin-bottom: 0.5em;
+              line-height: 1.5em;
+            }
+
+            p:nth-child(1) {
+              font-weight: 600;
+            }
+
+            span {
+              font-size: 0.8em;
+              color: var(--grey-400);
+            }
+          }
+
+          .description {
+            width: 100%;
+            padding-top: 1.25em;
+            
+            .item {
+              margin-bottom: 30px;
+
+              p {
+                margin-bottom: 0.6em;
+                font-weight: 600;
+              }
+
+              ul {
+                padding-left: 20px;
+                list-style-type: disc;
+
+                li {
+                  margin-bottom: 0.6em;
+                  line-height: 1.5em;
+                }
+              }
+            }
+          }          
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  section.experiencePage {
+    .container {
+      .experience {
+        .content {
+          .job {
+            position: relative;
+            flex-direction: row;
+            justify-content: center;
+              
+            .title {
+              width: 40%;
+              max-width: 400px;
+            }
+
+            .description {
+              width: 50%;
+              max-width: 400px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

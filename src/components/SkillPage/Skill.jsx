@@ -1,6 +1,8 @@
 import styles from './Skill.module.scss';
 import codeIcon from '../../assets/icons/code.png';
 import toolIcon from '../../assets/icons/tool.png';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const professional = [
   "擁有 HTML、CSS、JavaScript 知識功底",
@@ -59,16 +61,32 @@ function Tools() {
 }
 
 export default function Skill() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true })
+
   return (
     <section id='Skill' className={styles.skillPage}>
       <div className={styles.container}>
-        <div className={styles.skill}>
+        <motion.div
+          className={styles.skill}
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: isInView ? 1 : 0,
+            y: isInView ? 0 : 50
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.3,
+            ease: [0.17, 0.55, 0.55, 1]
+          }}
+        >
           <h2>SKILL</h2>
           <div className={styles.skillCards}>
             <Professional />
-            <Tools/>
+            <Tools />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

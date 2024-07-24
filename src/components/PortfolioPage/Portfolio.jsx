@@ -3,6 +3,8 @@ import todoListImage from '../../assets/images/todoList.png'
 import alphaShopImage from '../../assets/images/alphaShop.png';
 import restaurantsImage from '../../assets/images/restaurants.png';
 import revealCardsImage from '../../assets/images/revealCards.png';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const projectContent = [
   {
@@ -45,15 +47,31 @@ function Project() {
 }
 
 export default function Portfolio() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true })
+
   return (
     <section id='Portfolio' className={styles.portfolioPage}>
       <div className={styles.container}>
-        <div className={styles.portfolio}>
+        <motion.div
+          className={styles.portfolio}
+          ref={ref}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{
+            opacity: isInView ? 1 : 0,
+            y: isInView ? 0 : -20
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.3,
+            ease: [0.17, 0.55, 0.55, 1]
+          }}
+        >
           <h2>PORTFOLIO</h2>
           <div className={styles.projectGroup}>
-            <Project/>
+            <Project />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

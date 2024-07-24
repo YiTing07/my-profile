@@ -35,10 +35,13 @@ section.portfolioPage {
         a {
           .image {
             display: flex;
-            justify-content: center;  
+            justify-content: center;
+            overflow: hidden;  
   
             img {
               width: 100%;
+              object-fit: contain;
+              transition: .5s ease-out; 
             }
           }
 
@@ -73,6 +76,10 @@ section.portfolioPage {
 
       .project:hover a .image::before {
         opacity: 0.4;
+      }
+
+      .project:hover a .image img {
+        transform: scale(1.1);
       }
 
       .project:hover a p {

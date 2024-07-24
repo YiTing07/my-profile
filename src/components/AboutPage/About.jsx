@@ -1,10 +1,47 @@
 import styles from './About.module.scss';
 import myImage from '../../assets/images/my-image.jpg';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 export default function About() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const variants = {
+    hidden: {
+      y: -100,
+      opacity: 0
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 50,
+        mass: 5,
+        duration: 0.9,
+        delay: 1.5
+      }
+    }
+  }
+
   return (
-    <section id='About'className={styles.aboutPage}>
-      <div className={styles.container}>
+    <section id='About' className={styles.aboutPage}>
+      <motion.div
+        className={styles.container}
+        ref={ref}
+        initial={{ opacity: 0, x: -200 }}
+        animate={{
+          opacity: isInView ? 1 : 0,
+          x: isInView ? 0 : -200
+        }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0.17, 0.55, 0.55, 1]
+        }}
+      >
         <div className={styles.about}>
           <h2>ABOUT</h2>
           <div className={styles.description}>
@@ -22,10 +59,15 @@ export default function About() {
             </span>
           </div>
         </div>
-        <div className={styles.myImage}>
+        <motion.div
+          className={styles.myImage}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={variants}
+        >
           <img src={myImage} alt="myImage" />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

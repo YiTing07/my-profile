@@ -3,20 +3,20 @@ import styles from '../Experience.module.scss';
 function AssistantContent() {
   const contents = [
     {
-      item: "美編文宣",
-      details: ["使用 Canva 製作活動電子文宣", "使用 Photoshop 製作紙本海報"]
+      item: "網站後臺管理",
+      details: "使用第三方 CMS 管理網站內容，包括首頁公告與活動資訊，確保內容即時且版面清晰，並協助基礎視覺排版與結構調整。"
     },
     {
-      item: "官網和社群平台經營與管理",
-      details: ["編輯或更新網站、社群平台內容與排版", "發布最新訊息，如活動資訊、法規異動等", "定期看有無使用者投遞問題或建議"]
+      item: "視覺設計與行銷素材製作",
+      details: "使用 Canva、Photoshop 製作活動用 Banner、社群貼文與紙本海報，配合活動主題設計明瞭視覺，提升資訊傳遞效率"
     },
     {
-      item: "會員經營",
-      details: ["向會員寄發活動資訊、節日賀卡"]
+      item: "社群與會員經營",
+      details: "管理 Facebook和官網平台，發布活動訊息；定期寄送電子報與節日賀卡，維護會員關係與活躍度"
     },
     {
-      item: "協助活動辦理",
-      details: ["向會員寄發活動資訊、節日賀卡活動前：文宣製作與宣傳、報名相關事務、收據開立與寄發", "活動後：整理滿意度調查、活動影片、相片和文件之歸檔、課程證書寄發"]
+      item: "會務執行與活動支援",
+      details: "規劃與執行年度會員大會、理監事會議、研討會與專家會議等實體/線上活動，負責會錢準備、現場執行會後整理，活動人數數十人不等。"
     },
   ]
 
@@ -26,11 +26,9 @@ function AssistantContent() {
         <div key={index} className={styles.item}>
           <p>{content.item}</p>
           <ul>
-            {content.details.map((detail, index) =>
-              <li key={index}>{detail}</li>
-            )}  
-          </ul>      
-      </div>
+            <li>{content.details}</li>
+          </ul>
+        </div>
       )}
     </div>
   )
@@ -40,11 +38,10 @@ export default function Assistant() {
   return (
     <div className={styles.job}>
       <div className={styles.title}>
-        <p>工作經歷 | 社團法人台灣生醫品質保證協會</p>
-        <p>專案助理</p>
+        <p>社團法人台灣生醫品質保證協會 | 專案助理</p>
         <span>2021.04－迄今</span>
       </div>
-      <AssistantContent/>
+      <AssistantContent />
     </div>
   )
 }

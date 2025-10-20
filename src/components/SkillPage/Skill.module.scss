@@ -1,20 +1,22 @@
-$min-width: 800px;
+$max-width: 900px;
 
 section.skillPage {
   width: 100%;
   height: 100%;
   padding-top: 60px;
+  background-image: url(../../assets/images/skillPageBg.jpg);
+  background-size: cover;
+  background-position: center;
 
   .container {
+    width: 70%;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
-    padding: 4em 0;
-    background-image: url(../../assets/images/skillPageBg.jpg);
-    background-size: cover;
-    background-position: center;
+    padding: 4em 0;   
 
     .skill {
       display: flex;
@@ -27,7 +29,7 @@ section.skillPage {
         color: var(--orange);
       }
 
-      .skillCards {
+      .skills {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -35,14 +37,13 @@ section.skillPage {
         width: 100%;
         padding: 0 2em;
 
-        .skillCard {
+        .skillItem {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           width: 100%;
           margin-bottom: 2em;
           padding: 2em 0;
-          background-color: var(--cream);
           border-radius: 8px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;  
 
@@ -57,32 +58,55 @@ section.skillPage {
             }
           }
 
-          .skillContent {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 90%;
-            margin: 0 auto;
-            padding: 0 1.2em;
+          h3 {
+            margin: 0.6em 0;
+            text-align: center;
+            color: var(--brown);
+            font-weight: 600;
+          }     
 
-            h3 {
-              margin: 0.6em 0;
-              color: var(--brown);
-              font-weight: 600;
+          .skillCards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1em;
+            padding: 1em 2em;
+
+            .card {
+              padding: 0.75em;
+              border: 1px solid brown;
+              border-radius: 10px;
+
+              h4 {
+                margin-bottom: 5px;
+                word-break: break-word;
+              }
+              p {
+                line-height: normal;
+              }
             }
 
-            .skillList {
-              ul {
-                display: flex;
-                padding-left: 1em;
-                flex-direction: column;
-                margin: 0 auto;
-                line-height: 30px;
+            .card:hover {
+              background-color: var(--brown);
+              color: var(--cream);
+            }
+          }    
+        }
+      }
+    }
+  }
+}
 
-                li {
-                  list-style-type: disc;
-                }
-              }
+@media screen and (max-width: $max-width) {
+  section.skillPage {
+    .container {
+      width: 90%;
+      
+      .skill {
+        .skills {
+          .skillItem {
+            .skillCards {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 1em;
             }
           }
         }
@@ -91,19 +115,16 @@ section.skillPage {
   }
 }
 
-@media screen and (min-width: $min-width) {
+@media screen and (max-width: 600px) {
   section.skillPage {
     .container {
       .skill {
-        .skillCards {
-          flex-direction: row;
-          justify-content: space-evenly;
-          align-items: stretch;
-
-          .skillCard {
-            display: block;
-            width: 40%;
-            max-width: 480px;        
+        .skills {
+          .skillItem {
+            .skillCards {
+              grid-template-columns: 1fr;
+              gap: 1em;
+            }
           }
         }
       }

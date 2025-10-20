@@ -2,14 +2,12 @@ import styles from './Experience.module.scss';
 import SocialWorker from './Job/SocialWorker';
 import Clerk from './Job/Clerk';
 import Assistant from './Job/Assistant';
-import ECommerceCourse from './Job/ECommerceCourse';
-import FrontEndCourse from './Job/FrontEndCourse';
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion'
 
 
 export default function Experience() {
-  const years = ['2018', '2019', '2020', '2021', '2023']
+  const years = ['2018', '2019', '2021']
   const [currentYear, setCurrentYear] = useState('2018');
 
   const ref = useRef(null);
@@ -21,12 +19,8 @@ export default function Experience() {
         return <SocialWorker />;
       case '2019':
         return <Clerk />;
-      case '2020':
-        return <ECommerceCourse />;
       case '2021':
         return <Assistant />;
-      case '2023':
-        return <FrontEndCourse />;
       default:
         return <SocialWorker />
     }
@@ -50,33 +44,37 @@ export default function Experience() {
       >
         <div className={styles.experience}>
           <h2>EXPERIENCE</h2>
-          <div className={styles.content}>
-            <div className={styles.timeline}>
-              <div className={styles.buttonGroup}>
-                {years.map((year) =>
-                  <button
-                    key={year}
-                    onClick={() => setCurrentYear(year)}
-                    className={currentYear === year ? styles.active : ''}
-                  >
-                    {year}
-                  </button>
-                )}
+          <div className={`${styles.panel} job`}>
+            <h3>工作經歷</h3>
+            <div className={styles.content}>
+              <div className={styles.timeline}>
+                <div className={styles.buttonGroup}>
+                  {years.map((year) =>
+                    <button
+                      key={year}
+                      onClick={() => setCurrentYear(year)}
+                      className={currentYear === year ? styles.active : ''}
+                    >
+                      {year}
+                    </button>
+                  )}
+                </div>
               </div>
+
+              <motion.div
+                key={currentYear}
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                {renderJobComponent()}
+              </motion.div>
             </div>
-
-            <motion.div
-              key={currentYear}
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              {renderJobComponent()}
-            </motion.div>
-
-
+            
           </div>
+
+          
         </div>
       </motion.div>
     </section>

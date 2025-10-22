@@ -1,0 +1,107 @@
+$max-width: 900px;
+
+.otherExperience {
+  width: 60vw;
+
+  .container {
+    position: relative;
+    margin: 0 auto;
+
+    h3 {
+      margin-bottom: 1em;
+      text-align: center;
+    }
+
+    .carousel {
+      border: 1px solid var(--brown);
+      border-radius: 5px;
+
+      .control {
+        position: absolute;
+        top: 1.75em;
+        right: 2em;
+
+        button {
+          width: 40px;
+          height: 40px;
+          margin: 0 8px;
+          background: var(--orange);
+          color: var(--cream);
+          border: 0;
+          border-radius: 5px;
+        }
+
+        button:hover {
+          background: var(--brown);
+        }
+      }
+
+      .card {    
+        .container {
+          .title {
+            margin: 2em 1.75em;
+            font-weight: 500;
+            line-height: normal;
+
+            p {
+              margin-top: 8px;
+              color: var(--grey-400)
+            }
+          }
+
+          .content {
+            margin: 0 1.75em;
+
+            .describe {
+              margin-bottom: 2em;
+
+              p:nth-child(1) {
+                font-weight: 500;
+              }
+              p {
+                margin-bottom: 1em;
+                line-height: normal;
+              }
+
+              ul li {
+                padding: 4px 0;
+                line-height: normal;
+                list-style-type: disc;
+                list-style-position: inside;
+              }
+
+              .skill {
+                p {
+                  margin: 8px 0;
+                }
+
+                ul li {
+                  padding-left: 8px;
+                }
+              }
+            } 
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $max-width) {
+  .otherExperience {
+    width: 80vw;
+
+    .container {
+      .carousel {
+        .control {
+          top: 2em;
+
+          button {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

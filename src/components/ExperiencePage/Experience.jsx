@@ -2,6 +2,7 @@ import styles from './Experience.module.scss';
 import SocialWorker from './Job/SocialWorker';
 import Clerk from './Job/Clerk';
 import Assistant from './Job/Assistant';
+import { OtherExperience } from './Other/OtherExperience';
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion'
 
@@ -74,7 +75,8 @@ export default function Experience() {
             
           </div>
 
-          
+          <OtherExperience />
+
         </div>
       </motion.div>
     </section>

@@ -31,20 +31,18 @@ section.experiencePage {
 
         .content {
           display: flex;
-          justify-content: center;
+          justify-content: space-evenly;
           min-height: 650px;
         
 
           .timeline {
-            margin-right: 2em;
-            padding: 2em 1.25em 0;
+            margin: 2em 0;
          
             .buttonGroup {
               display: flex;
               flex-direction: column;
               justify-content: space-evenly;
               flex-wrap: wrap;
-              margin: 0 auto;
 
               button {              
                 display: flex;
@@ -74,7 +72,6 @@ section.experiencePage {
         }
 
         .job {
-          margin: 0 auto;
           padding-left: 1em;
           flex: 1;
           max-width: 650px;
@@ -82,24 +79,15 @@ section.experiencePage {
           .title {
             display: flex;
             flex-direction: column;
-            margin-bottom: 1em;
-            padding-top: 1em;
+            margin: 2em 0;
             line-height: normal;
 
             p {
-              margin-bottom: 0.5em;
-              font-weight: 600;
-            }
-
-            span {
-              font-size: 0.8em;
               color: var(--grey-400);
             }
           }
 
-          .description {
-            padding-top: 1.25em;
-            
+          .description {            
             .item {
               margin-bottom: 30px;
 
@@ -130,23 +118,28 @@ section.experiencePage {
 @media screen and (max-width: $max-width) {
   section.experiencePage {
     .container {
-      width: 90%;
-
       .experience {
         .panel {
+          width: 80vw;
+
           .content {
             flex-direction: column;
             justify-content: flex-start;
 
             .timeline {
-              margin-right: 0;
-              margin-bottom: 2em;
               width: 100%;
+              margin: 1em 0;
 
               .buttonGroup {
                 flex-direction: row;
                 align-items: flex-start;
               }
+            }
+          }
+
+          .job {
+            .title {
+              margin: 1em 0;
             }
           }
         }

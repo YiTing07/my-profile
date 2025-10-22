@@ -34,8 +34,8 @@ export default function SocialWorker() {
   return (
     <div className={styles.job}>
       <div className={styles.title}>
-        <p>台北市智障者家長協會 | 專案社工</p>
-        <span>2018.10－2019.02</span>
+        <h4>台北市智障者家長協會 | 專案社工</h4>
+        <p>2018.10－2019.02</p>
       </div>
       <SocialWorkerContent />
     </div>

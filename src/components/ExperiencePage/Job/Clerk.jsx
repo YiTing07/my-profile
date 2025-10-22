@@ -42,8 +42,8 @@ export default function Clerk() {
   return (
     <div className={styles.job}>
       <div className={styles.title}>
-        <p>誠品股份有限公司 | 圖書管理員</p>
-        <span>2019.03－2020.05</span>
+        <h4>誠品股份有限公司 | 圖書管理員</h4>
+        <p>2019.03－2020.05</p>
       </div>
       <ClerkContent />
     </div>

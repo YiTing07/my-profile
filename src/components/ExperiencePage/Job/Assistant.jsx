@@ -38,8 +38,8 @@ export default function Assistant() {
   return (
     <div className={styles.job}>
       <div className={styles.title}>
-        <p>社團法人台灣生醫品質保證協會 | 專案助理</p>
-        <span>2021.04－迄今</span>
+        <h4>社團法人台灣生醫品質保證協會 | 專案助理</h4>
+        <p>2021.04－迄今</p>
       </div>
       <AssistantContent />
     </div>

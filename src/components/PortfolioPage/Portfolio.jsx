@@ -1,16 +1,16 @@
 import styles from './Portfolio.module.scss';
-import todoListImage from '../../assets/images/todoList.png'
 import alphaShopImage from '../../assets/images/alphaShop.png';
-import restaurantsImage from '../../assets/images/restaurants.png';
+import hikingActivityImage from '../../assets/images/hikingActivityImage.PNG';
+import restaurantListImage from '../../assets/images/restaurantListImage.PNG';
 import revealCardsImage from '../../assets/images/revealCards.png';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const projectContent = [
   {
-    name: "Todo List",
-    link: "https://yiting07.github.io/todolist-react-starter/",
-    image: todoListImage
+    name: "Hiking Activity",
+    link: "https://yiting07.github.io/hiking-activity/",
+    image: hikingActivityImage
   },
   {
     name: "Alpha Shop",
@@ -18,9 +18,9 @@ const projectContent = [
     image: alphaShopImage
   },
   {
-    name: "Restaurants",
-    link: "https://yiting07.github.io/Restaurants/",
-    image: restaurantsImage
+    name: "Restaurant List",
+    link: "https://yiting07.github.io/restaurant-list/",
+    image: restaurantListImage
   },
   {
     name: "Reveal Cards",
